@@ -31,7 +31,8 @@ jobs:
         python -m pip install flake8 pytest
         python -m pip install git+https://github.com/jsnagai/Nichesphere/
         python -m pip install pycrosstalker
-        
+        python -m pip install git+https://github.com/Costalab/PILOT@v2.0.4
+
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |
