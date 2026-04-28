@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.11.5", "3.12"]
+        python-version: ["3.11","3.12","3.13","3.14"]
 
     steps:
     - uses: actions/checkout@v4
@@ -29,10 +29,10 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         python -m pip install flake8 pytest
+        python -m pip install git+https://github.com/Costalab/PILOT
         python -m pip install git+https://github.com/jsnagai/Nichesphere/
         python -m pip install pycrosstalker
-        python -m pip install git+https://github.com/Costalab/PILOT@v2.0.4
-
+       
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |
